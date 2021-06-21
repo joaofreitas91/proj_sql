@@ -4,7 +4,7 @@ drop database if exists projeto_2;
 # criar database projeto_2 caso ela não exista
 create database if not exists projeto_2;
 
-# selecionar database projeto_2
+# usar database projeto_2
 use projeto_2;
 
 # excluir tabela usuario caso ela exista
@@ -24,7 +24,7 @@ insert usuario values
 	(default, "Jeferson Santos", "http://caminho_da_imagem.com", "jef_san", now()),
 	(default, "Matheus Fernandes", "http://caminho_da_imagem.com", "mat_san", now());
 
-# selecionar tabela usuario ordenada por nome
+# buscar dados tabela usuario ordenada por nome
 select * from usuario order by nome;
 
 # excluir tabela cartao caso ela exista
@@ -44,7 +44,7 @@ create table if not exists cartao(
 insert cartao values(default, "1234123412341234", "258", "2033-09-01", true, now()),
 					(default, "9999555522221111", "258", "2033-09-01", false, now());
 
-# selecionar tabela cartao e mostrar somente os validos
+# buscar dados tabela cartao e mostrar somente os validos
 select * from cartao where valido = true;                                        
 
 # excluir tabela transacao caso ela exita
@@ -66,7 +66,7 @@ insert transacao values
 (default, 1, 1, 15.50, now()),
 (default, 2, 2, 10.50, '2021-06-15 00:00:00');
 
-# selecionar tabelas transação,  usuario e cartão e mostrar id transacao, data cadastro, valor, nome, nome usuario e numero do cartao em ordem de data decrescente
+# buscar dados nas tabelas transação,  usuario e cartão e mostrar id transacao, data cadastro, valor, nome, nome usuario e numero do cartao em ordem de data decrescente
 select t.id, t.data_cadastro , t.valor, u.nome, u.nome_usuario, c.numero from transacao as t join usuario as u on t.id_usuario = u.id join cartao as c on t.id_cartao = c.id order by t.data_cadastro desc;
 
 # limpar dados transacao

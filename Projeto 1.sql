@@ -26,7 +26,7 @@ insert into transacao(tipo, nome, valor, data_de_cadastro) values
 	("compra", "Produto 1", "10.30", "2021-06-03 23:02:04"),
     ("venda", "Produto 2", "5.99", now());
 
-# select com filtro data e ordenação crescente por data
+# buscar dados com filtro data e ordenação crescente por data
 select *, date_format(data_de_cadastro, "%d/%m/%Y") from transacao order by data_de_cadastro asc;
 
 # soma valores transação
